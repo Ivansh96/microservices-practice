@@ -1,0 +1,7 @@
+com\testing\customer\CustomerApplication.class
+com\testing\customer\dto\CustomerRequest.class
+com\testing\customer\dal\model\Customer$CustomerBuilder.class
+com\testing\customer\dal\model\Customer.class
+com\testing\customer\dal\repository\CustomerRepository.class
+com\testing\customer\rest\CustomerController.class
+com\testing\customer\service\CustomerService.class
