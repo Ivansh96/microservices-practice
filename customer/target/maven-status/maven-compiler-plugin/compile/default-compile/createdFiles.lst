@@ -1,5 +1,7 @@
+com\testing\customer\config\CustomerConfig.class
 com\testing\customer\CustomerApplication.class
 com\testing\customer\dto\CustomerRequest.class
+com\testing\customer\dto\FraudCheckResponse.class
 com\testing\customer\dal\model\Customer$CustomerBuilder.class
 com\testing\customer\dal\model\Customer.class
 com\testing\customer\dal\repository\CustomerRepository.class

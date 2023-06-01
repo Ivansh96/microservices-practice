@@ -1,0 +1,7 @@
+com\testing\fraud\rest\FraudController.class
+com\testing\fraud\dto\FraudCheckResponse.class
+com\testing\fraud\service\FraudCheckService.class
+com\testing\fraud\dal\model\FraudHistoryCheck$FraudHistoryCheckBuilder.class
+com\testing\fraud\dal\repository\FraudHistoryCheckRepository.class
+com\testing\fraud\dal\model\FraudHistoryCheck.class
+com\testing\fraud\FraudApplication.class
