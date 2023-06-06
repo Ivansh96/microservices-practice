@@ -1,6 +1,6 @@
 package com.testing.fraud.rest;
 
-import com.testing.fraud.dto.FraudCheckResponse;
+import com.testing.clients.fraud.FraudCheckResponse;
 import com.testing.fraud.service.FraudCheckService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
