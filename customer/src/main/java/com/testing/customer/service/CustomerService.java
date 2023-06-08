@@ -2,6 +2,8 @@ package com.testing.customer.service;
 
 import com.testing.clients.fraud.FraudCheckResponse;
 import com.testing.clients.fraud.FraudClient;
+import com.testing.clients.notification.NotificationClient;
+import com.testing.clients.notification.NotificationRequest;
 import com.testing.customer.dal.repository.CustomerRepository;
 import com.testing.customer.dto.CustomerRequest;
 import com.testing.customer.dal.model.Customer;
@@ -11,7 +13,8 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public record CustomerService(CustomerRepository customerRepository,
                               RestTemplate restTemplate,
-                              FraudClient fraudClient) {
+                              FraudClient fraudClient,
+                              NotificationClient notificationClient) {
     public void registerCustomer(CustomerRequest request) {
         Customer customer = Customer.builder()
                 .firstName(request.firstName())
@@ -29,5 +32,14 @@ public record CustomerService(CustomerRepository customerRepository,
         if (fraudCheckResponse.isFraudster()) {
             throw new IllegalStateException("fraudster");
         }
+
+        notificationClient.sendNotification(
+                new NotificationRequest(
+                        customer.getId(),
+                        customer.getEmail(),
+                        String.format("Welcome %s",
+                                customer.getFirstName())
+                )
+        );
     }
 }
