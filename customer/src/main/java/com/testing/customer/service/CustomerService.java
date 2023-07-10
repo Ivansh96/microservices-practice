@@ -1,5 +1,6 @@
 package com.testing.customer.service;
 
+import com.testing.amqp.producer.RabbitMQMessageProducer;
 import com.testing.clients.fraud.FraudCheckResponse;
 import com.testing.clients.fraud.FraudClient;
 import com.testing.clients.notification.NotificationClient;
@@ -14,7 +15,7 @@ import org.springframework.web.client.RestTemplate;
 public record CustomerService(CustomerRepository customerRepository,
                               RestTemplate restTemplate,
                               FraudClient fraudClient,
-                              NotificationClient notificationClient) {
+                              RabbitMQMessageProducer rabbitMQMessageProducer) {
     public void registerCustomer(CustomerRequest request) {
         Customer customer = Customer.builder()
                 .firstName(request.firstName())
@@ -33,13 +34,17 @@ public record CustomerService(CustomerRepository customerRepository,
             throw new IllegalStateException("fraudster");
         }
 
-        notificationClient.sendNotification(
-                new NotificationRequest(
-                        customer.getId(),
-                        customer.getEmail(),
-                        String.format("Welcome %s",
-                                customer.getFirstName())
-                )
+        NotificationRequest notificationRequest = new NotificationRequest(
+                customer.getId(),
+                customer.getEmail(),
+                String.format("Welcome %s",
+                        customer.getFirstName())
+        );
+
+        rabbitMQMessageProducer.publish(
+                notificationRequest,
+                "internal.exchange",
+                "internal.notification.routing-key"
         );
     }
 }
