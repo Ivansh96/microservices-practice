@@ -1,0 +1,7 @@
+C:\Users\1\microservices-app\notification\src\main\java\com\testing\notification\service\NotificationService.java
+C:\Users\1\microservices-app\notification\src\main\java\com\testing\notification\dal\model\Notification.java
+C:\Users\1\microservices-app\notification\src\main\java\com\testing\notification\NotificationApplication.java
+C:\Users\1\microservices-app\notification\src\main\java\com\testing\notification\dal\repository\NotificationRepository.java
+C:\Users\1\microservices-app\notification\src\main\java\com\testing\notification\rabbitmq\NotificationConsumer.java
+C:\Users\1\microservices-app\notification\src\main\java\com\testing\notification\rest\NotificationController.java
+C:\Users\1\microservices-app\notification\src\main\java\com\testing\notification\config\NotificationConfig.java

@@ -1,0 +1,4 @@
+com\testing\clients\fraud\FraudCheckResponse.class
+com\testing\clients\notification\NotificationClient.class
+com\testing\clients\notification\NotificationRequest.class
+com\testing\clients\fraud\FraudClient.class

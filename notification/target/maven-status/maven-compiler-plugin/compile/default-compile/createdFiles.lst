@@ -1,0 +1,8 @@
+com\testing\notification\dal\repository\NotificationRepository.class
+com\testing\notification\dal\model\Notification.class
+com\testing\notification\dal\model\Notification$NotificationBuilder.class
+com\testing\notification\rabbitmq\NotificationConsumer.class
+com\testing\notification\rest\NotificationController.class
+com\testing\notification\service\NotificationService.class
+com\testing\notification\NotificationApplication.class
+com\testing\notification\config\NotificationConfig.class
